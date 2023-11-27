@@ -4,7 +4,8 @@ var can_laser: bool = true
 var can_grenade: bool = true
 var player_direction: Vector2 = Vector2.ZERO
 
-const player_speed: int = 500
+@export var max_speed: int = 500
+var player_speed: int = max_speed
 
 signal player_laser(pos, direction)
 signal player_grenade(pos, direction)

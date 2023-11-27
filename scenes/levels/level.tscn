@@ -62,11 +62,13 @@ scale = Vector2(1.33806, 1.68492)
 texture = ExtResource("2_vmgci")
 region_enabled = true
 region_rect = Rect2(-2958.15, -898.675, 9657.04, 3843.07)
+metadata/_edit_lock_ = true
 
 [node name="Decoration" type="Sprite2D" parent="Ground"]
 modulate = Color(0.823529, 0.721569, 0.313726, 1)
 position = Vector2(-1385, 1457)
 texture = ExtResource("3_u0jo4")
+metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="Ground"]
 position = Vector2(-3, 0)
@@ -83,6 +85,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-5, 65536, 1, 65531, 0, 2, 131067, 0, 2, 196603, 0, 2, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 131072, 2, 262148, 65536, 1, 262149, 131072, 2, 196613, 65536, 1, 196614, 131072, 2, 131078, 0, 2, 65542, 0, 2, 6, 0, 2, -65530, 0, 2, -131066, 131072, 1, -131067, 65536, 0, -4, 65536, 0, -3, 131072, 0, 393213, 0, 0, 262139, 0, 3)
 
 [node name="Mosses" type="Node2D" parent="Ground"]
+metadata/_edit_lock_ = true
 
 [node name="Moss1" type="Sprite2D" parent="Ground/Mosses"]
 position = Vector2(1927, 789)
@@ -122,6 +125,7 @@ rotation = -2.26893
 
 [node name="SteamVent" parent="Ground" instance=ExtResource("12_q7eby")]
 position = Vector2(-203, 624)
+metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Ground" instance=ExtResource("13_a4qgp")]
 position = Vector2(-1708, 2080)
@@ -154,6 +158,8 @@ energy = 2.3
 blend_mode = 1
 metadata/_edit_lock_ = true
 
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_grenade" from="Player" to="." method="_on_player_player_grenade"]
 [connection signal="player_laser" from="Player" to="." method="_on_player_player_laser"]
