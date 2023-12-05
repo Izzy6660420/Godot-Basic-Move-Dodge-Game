@@ -9,3 +9,6 @@ func _process(_delta):
 	
 	velocity = direction * SPEED
 	move_and_slide()
+
+func hit():
+	print("Damaged")
