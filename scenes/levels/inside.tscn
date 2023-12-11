@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://g8tiwva3ofdx"]
+[gd_scene load_steps=14 format=3 uid="uid://g8tiwva3ofdx"]
 
 [ext_resource type="PackedScene" uid="uid://yxidyrt13etg" path="res://scenes/levels/level.tscn" id="1_ce6lf"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_7v88j"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://biawsqg6iwqu7" path="res://graphics/lights/overlays/lattice.png" id="7_yxbgt"]
 [ext_resource type="PackedScene" uid="uid://desa4wfpyusxe" path="res://scenes/objects/wall_lamp.tscn" id="8_b7x2m"]
 [ext_resource type="PackedScene" uid="uid://dmcboid7dyak7" path="res://scenes/objects/simple_light.tscn" id="9_7a8es"]
+[ext_resource type="PackedScene" uid="uid://rdpotpjwwm5l" path="res://scenes/items/item.tscn" id="12_tqlht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imdr2"]
 size = Vector2(585, 1631)
@@ -46,7 +47,7 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(917517, 0, 6, 917516, 0, 6, 917515, 0, 6, 917514, 0, 7, 983050, 65536, 6, 1179658, 327680, 8, 917518, 0, 6, 917519, 0, 6, 917520, 0, 6, 917521, 0, 6, 917522, 0, 6, 917523, 393216, 7, 262145, 0, 6, 262146, 0, 6, 262147, 0, 6, 262148, 0, 6, 262149, 0, 6, 262150, 0, 6, 262151, 0, 6, 262152, 0, 6, 262155, 65536, 7, 262153, 0, 6, 262154, 0, 6, 327691, 65536, 6, 393227, 65536, 6, 589835, 65536, 6, 655371, 65536, 6, 720907, 65536, 8, 786429, 0, 6, 786430, 0, 6, 786431, 0, 6, 720896, 0, 6, 720897, 0, 6, 720898, 0, 6, 720899, 0, 6, 720900, 0, 6, 720901, 0, 6, 720902, 0, 6, 720903, 0, 6, 720904, 0, 6, 720905, 0, 6, 720906, 0, 6, 786428, 0, 6, 786427, 0, 8, 393211, 65536, 6, 458747, 65536, 6, 524283, 65536, 6, 655355, 65536, 6, 720891, 65536, 6, 327675, 0, 7, 327676, 196608, 8, 327677, 0, 6, 327678, 0, 6, 327679, 0, 6, 262144, 0, 6, 917490, 0, 6, 917491, 0, 6, 917492, 0, 6, 917493, 0, 6, 917494, 0, 6, 917495, 0, 6, 917496, 65536, 7, 1114104, 65536, 6, 1179640, 65536, 6, 917489, 0, 6, 1245176, 327680, 8, -196617, 327680, 6, -131081, 65536, 6, -65545, 65536, 6, -9, 65536, 6, 131063, 65536, 6, 196599, 196608, 6, 327671, 65536, 6, 393207, 65536, 6, 458743, 65536, 6, 524279, 65536, 6, 589815, 0, 8, 589816, 0, 6, 589817, 0, 6, 589818, 0, 6, 589819, 196608, 7, 262135, 65536, 6, 65527, 65536, 6, 196594, 0, 6, 196595, 0, 6, 196596, 0, 6, 196593, 262144, 7, 196600, 65536, 8, 131064, 0, 7, 131065, 0, 6, 131066, 0, 6, 131067, 0, 6, 131068, 131072, 7, 131069, 0, 6, 131070, 0, 6, 131071, 0, 6, 65536, 65536, 8, -196608, 65536, 6, -262144, 327680, 6, -196596, 65536, 6, -131060, 65536, 6, -65524, 65536, 6, 12, 65536, 6, 65548, 0, 8, 65551, 0, 6, 65552, 0, 6, 65553, 0, 6, 65554, 0, 6, 65555, 393216, 7, -262132, 327680, 6, 196604, 65536, 6, 262140, 65536, 6, 196597, 0, 6, 196598, 0, 6)
 
 [node name="Player" parent="." index="2"]
-position = Vector2(8593, 3151)
+position = Vector2(9111, 3082)
 metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="9"]
@@ -56,6 +57,7 @@ texture_scale = 3.0
 
 [node name="Lights" parent="." index="3"]
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("4_i4nlv")]
 position = Vector2(9076, 3162)
@@ -335,5 +337,8 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
 position = Vector2(9628.5, 3119.5)
 shape = SubResource("RectangleShape2D_imdr2")
+
+[node name="Item" parent="." index="7" instance=ExtResource("12_tqlht")]
+position = Vector2(8528, 2877)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
